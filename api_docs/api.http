@@ -1,15 +1,19 @@
 ### GET request to example server
-GET https://examples.http-client.intellij.net/get
-    ?generated-in=WebStorm
+GET http://localhost:3000/api/resume?
+    file=https://pub-3487086c4f2a423f95856b0db9707dcb.r2.dev/Aurelius_Ivan_Wijaya_CV.pdf
 
 ###
 
 
 ### POST request to example server
-POST http://localhost:3000/api
+POST http://localhost:3000/api/resume
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
-{
-    "data": "testing"
-}
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="cv.pdf"
+Content-Type: application/pdf
+
+< ./cv.pdf
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
